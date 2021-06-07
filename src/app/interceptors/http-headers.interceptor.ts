@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Injectable()
 export class HttpHeadersInterceptor implements HttpInterceptor {
@@ -13,7 +14,7 @@ export class HttpHeadersInterceptor implements HttpInterceptor {
                 setHeaders: {
                 },
                 setParams: {
-                    key: '534521d1aa85401bacce61e37e7ea2c0',
+                    key: environment.API_KEY,
                 }
             }
         );

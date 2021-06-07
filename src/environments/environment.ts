@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   BASE_URL: 'https://api.rawg.io/api',
+  API_KEY: '534521d1aa85401bacce61e37e7ea2c0'
 };
 
 /*
