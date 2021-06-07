@@ -3,19 +3,18 @@
     <mat-tab label="About">
       <p *ngIf="game?.parent_platforms?.length" class="game-tabs-par">
         Platforms:
-        <span *ngFor="let game of game?.parent_platforms; let last = last">{{ game?.platform?.name }}<span
-            *ngIf="!last">,
+        <span *ngFor="let game of game.parent_platforms; let last = last">{{ game.platform?.name }}<span *ngIf="!last">,
           </span></span>
       </p>
       <p *ngIf="game?.publishers?.length" class="game-tabs-par">
         Publishers:
-        <span *ngFor="let publisher of game?.publishers; let last = last">{{ publisher.name }}<span *ngIf="!last">,
+        <span *ngFor="let publisher of game.publishers; let last = last">{{ publisher.name }}<span *ngIf="!last">,
           </span></span>
       </p>
       <p *ngIf="game?.website" class="game-tabs-par">
         Website:
-        <a class="game-tabs-link" href="{{ game?.website }}" target="_blank">{{
-            game?.website
+        <a class="game-tabs-link" href="{{ game.website }}" target="_blank">{{
+            game.website
           }}</a>
       </p>
       <div class="game-description" [innerHTML]="game?.description"></div>
@@ -33,11 +32,11 @@
       </p>
     </mat-tab>
     <mat-tab label="Screenshots" *ngIf="game?.screenshots?.length">
-      <img class="game-screenshot" *ngFor="let screenshot of game?.screenshots" src="{{ screenshot.image }}"
+      <img class="game-screenshot" *ngFor="let screenshot of game.screenshots" src="{{ screenshot.image }}"
         alt="screenshot" />
     </mat-tab>
     <mat-tab label="Trailers" *ngIf="game?.trailers?.length">
-      <video class="game-trailer" controls *ngFor="let trailer of game?.trailers">
+      <video class="game-trailer" controls *ngFor="let trailer of game.trailers">
         <source src="{{ trailer.data?.max }}" type="video/mp4" />
         Your browser does not support the video tag.
       </video>

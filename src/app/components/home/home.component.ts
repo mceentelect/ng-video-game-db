@@ -42,9 +42,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   searchGames(sort: string, search?: string): void {
-    console.log(sort);
-    console.log(search);
-
     this.gameSub = this.httpService.getGameList(sort, search)
       .subscribe((gameList) => {
         this.games = gameList.results;
